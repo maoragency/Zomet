@@ -1,0 +1,470 @@
+{
+  "vulnerabilities": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": [
+      {
+        "package": "class-variance-authority",
+        "severity": "low",
+        "description": "Very old version detected: class-variance-authority@^0.7.1",
+        "fixAvailable": true
+      },
+      {
+        "package": "lucide-react",
+        "severity": "low",
+        "description": "Very old version detected: lucide-react@^0.475.0",
+        "fixAvailable": true
+      },
+      {
+        "package": "next-themes",
+        "severity": "low",
+        "description": "Very old version detected: next-themes@^0.4.4",
+        "fixAvailable": true
+      },
+      {
+        "package": "@flydotio/dockerfile",
+        "severity": "low",
+        "description": "Very old version detected: @flydotio/dockerfile@^0.7.8",
+        "fixAvailable": true
+      },
+      {
+        "package": "eslint-plugin-react-refresh",
+        "severity": "low",
+        "description": "Very old version detected: eslint-plugin-react-refresh@^0.4.18",
+        "fixAvailable": true
+      }
+    ]
+  },
+  "codeIssues": {
+    "xssVulnerabilities": [
+      {
+        "file": "scripts\\security-audit.js",
+        "line": 35,
+        "code": "eval(",
+        "severity": "critical",
+        "description": "eval() usage is extremely dangerous and can lead to code injection"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityShortcuts.jsx",
+        "line": 101,
+        "code": "innerHTML = `\r\n      <div style=\"\r\n        position: fixed",
+        "severity": "medium",
+        "description": "Direct innerHTML assignment may lead to XSS"
+      }
+    ],
+    "csrfVulnerabilities": [
+      {
+        "file": "scripts\\apply-schema-direct.js",
+        "line": 34,
+        "code": "fetch(url, {\r\n      method: 'POST'",
+        "severity": "medium",
+        "description": "POST request without credentials may be vulnerable to CSRF"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityFeatures.jsx",
+        "line": 279,
+        "code": "fetch('/api/fix-admin-role', {\r\n          method: 'POST'",
+        "severity": "medium",
+        "description": "POST request without credentials may be vulnerable to CSRF"
+      },
+      {
+        "file": "src\\utils\\errorHandler.js",
+        "line": 778,
+        "code": "fetch('/api/errors', {\r\n      method: 'POST'",
+        "severity": "medium",
+        "description": "POST request without credentials may be vulnerable to CSRF"
+      }
+    ],
+    "injectionRisks": [],
+    "exposedSecrets": [
+      {
+        "file": "src\\components\\accessibility\\AccessibilityFeatures.jsx",
+        "line": 295,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 39,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 47,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 54,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 62,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 73,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 81,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 89,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 97,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 105,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\AccessibilityPanel.jsx",
+        "line": 113,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 36,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 248,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 256,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 264,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 272,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 283,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 291,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 299,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 307,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 315,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\accessibility\\FloatingAccessibilityButton.jsx",
+        "line": 323,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 65,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 69,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 73,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 78,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 86,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 94,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 105,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 109,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 113,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\components\\AdvancedSearch.jsx",
+        "line": 118,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\contexts\\AccessibilityContext.jsx",
+        "line": 152,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\pages\\auth\\ResetPassword.jsx",
+        "line": 64,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\queryOptimization.js",
+        "line": 268,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\queryOptimization.js",
+        "line": 279,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\queryOptimization.js",
+        "line": 292,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\systemSettings.js",
+        "line": 769,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\systemSettings.js",
+        "line": 775,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\systemSettings.js",
+        "line": 781,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\systemSettings.js",
+        "line": 787,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\systemSettings.js",
+        "line": 793,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\services\\systemSettings.js",
+        "line": 799,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\test\\utils.jsx",
+        "line": 119,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\test\\utils.jsx",
+        "line": 127,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\utils\\index.ts",
+        "line": 28,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\utils\\index.ts",
+        "line": 29,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\utils\\validation.js",
+        "line": 26,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      },
+      {
+        "file": "src\\utils\\validation.js",
+        "line": 27,
+        "code": "***REDACTED***",
+        "severity": "critical",
+        "description": "Potential hardcoded secret or password"
+      }
+    ]
+  },
+  "supabaseSecurityScore": 100,
+  "configurationIssues": [
+    {
+      "severity": "medium",
+      "description": "Potential real secrets in .env.example file"
+    },
+    {
+      "severity": "low",
+      "description": "No audit script found in package.json"
+    }
+  ],
+  "overallSecurityScore": 0,
+  "recommendations": [
+    {
+      "priority": "critical",
+      "category": "code",
+      "title": "Remove Exposed Secrets",
+      "description": "Hardcoded secrets found in code - move to environment variables",
+      "action": "Replace hardcoded secrets with environment variables"
+    },
+    {
+      "priority": "high",
+      "category": "code",
+      "title": "Fix XSS Vulnerabilities",
+      "description": "Potential XSS vulnerabilities detected in code",
+      "action": "Sanitize user input and avoid dangerous HTML operations"
+    },
+    {
+      "priority": "medium",
+      "category": "general",
+      "title": "Implement Content Security Policy",
+      "description": "Add CSP headers to prevent XSS and other injection attacks",
+      "action": "Configure CSP in your web server or meta tags"
+    },
+    {
+      "priority": "low",
+      "category": "monitoring",
+      "title": "Set Up Security Monitoring",
+      "description": "Implement logging and monitoring for security events",
+      "action": "Add error tracking and security event logging"
+    }
+  ],
+  "scannedFiles": 203,
+  "totalIssues": 59
+}

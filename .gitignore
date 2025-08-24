@@ -1,0 +1,75 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files and debugging
+test-*.js
+test-*.html
+debug-*.js
+debug-*.html
+fix-*.js
+check-*.js
+apply-*.js
+verify-*.js
+run-*.js
+final-*.js
+
+# Temporary reports and documentation
+*_REPORT.md
+*_SUMMARY.md
+*_INSTRUCTIONS.md
+*_ANALYSIS.md
+*_AUDIT*.md
+*_FIXES*.md
+*_IMPLEMENTATION*.md
+COMPREHENSIVE_*.md
+DASHBOARD_*.md
+ADMIN_*.md
+AUTHENTICATION_*.md
+DEPLOYMENT_*.md
+FLOATING_*.md
+NAVIGATION_*.md
+RTL_*.md
+SUPABASE_*.md
+TECHNICAL_*.md
+ACCESSIBILITY*.md
+QA_*.md
+qa-report.json
+
+# Backup directories
+.cleanup-backup/
+.backup/
+backup/
+
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini

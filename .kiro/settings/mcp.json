@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "supabase-manager": {
+      "command": "node",
+      "args": [
+        "./mcp-supabase-server/index.js"
+      ],
+      "env": {
+        "SUPABASE_URL": "https://jlrcmqpmmxxlvezutzab.supabase.co",
+        "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpscmNtcXBtbXh4bHZlenV0emFiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NTI1MDQ1MywiZXhwIjoyMDcwODI2NDUzfQ.DaSKjn7CI4ZpkOsP7c4SVv09TwU6RKUvPuhWvqU8pWg",
+        "VITE_SUPABASE_URL": "https://jlrcmqpmmxxlvezutzab.supabase.co",
+        "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpscmNtcXBtbXh4bHZlenV0emFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUyNTA0NTMsImV4cCI6MjA3MDgyNjQ1M30.xiP_Zk58x1Ezrkzs-kGcKL4pC6-d6AenZzSdH0bpH2I"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "analyze_schema",
+        "fix_admin_permissions",
+        "validate_data_integrity",
+        "analyze_codebase"
+      ]
+    }
+  }
+}

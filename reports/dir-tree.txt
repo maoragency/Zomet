@@ -1,0 +1,66 @@
+ZOMET VEHICLE MARKETPLACE - COMPLETE DIRECTORY TREE
+================================================================
+
+Root Directory: .
+├── .DS_Store
+├── .gitignore
+├── .kiro/
+│   └── specs/
+│       └── supabase-migration/
+│           ├── design.md
+│           ├── requirements.md
+│           └── tasks.md
+├── components.json
+├── dist/
+│   ├── assets/
+│   │   └── index-Dp1hhG8H.css
+│   └── index.html
+├── eslint.config.js
+├── index.html
+├── jsconfig.json
+├── node_modules/ [EXTENSIVE - 1000+ packages including @base44/sdk]
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── src/
+│   ├── api/ [EMPTY - Missing API files]
+│   ├── components/
+│   │   ├── ui/ [Shadcn/UI components]
+│   │   ├── AdvancedSearch.jsx
+│   │   └── VehicleCard.jsx
+│   ├── hooks/
+│   │   └── use-mobile.jsx
+│   ├── lib/
+│   │   └── utils.js
+│   ├── pages/
+│   │   ├── AddVehicle.jsx
+│   │   ├── BuyerRequest.jsx
+│   │   ├── Checkout.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Financing.jsx
+│   │   ├── FinancingAndInsurance.jsx
+│   │   ├── Home.jsx
+│   │   ├── index.jsx
+│   │   ├── Insurance.jsx
+│   │   ├── Layout.jsx
+│   │   ├── MyListings.jsx
+│   │   ├── PaymentSuccess.jsx
+│   │   ├── Pricing.jsx
+│   │   ├── VehicleDetails.jsx
+│   │   └── VehiclePricing.jsx
+│   ├── utils/
+│   │   └── index.ts
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── tailwind.config.js
+└── vite.config.js
+
+KEY FINDINGS:
+- Missing src/api/ directory with entities and integrations
+- Base44 SDK dependency present in node_modules
+- Complete React application structure with 13 pages
+- Tailwind CSS + shadcn/ui component library
+- Vite build system with React 18
+- Missing .env file (expected for environment variables)

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test - צומת</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-link {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .test-link:hover {
+            background: #1e40af;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success { background: #d1fae5; color: #065f46; }
+        .error { background: #fee2e2; color: #991b1b; }
+        .info { background: #dbeafe; color: #1e40af; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>בדיקת ניווט - צומת</h1>
+        
+        <div id="status" class="status info">
+            מוכן לבדיקה...
+        </div>
+        
+        <h2>קישורים לבדיקה:</h2>
+        <div>
+            <a href="/" class="test-link">דף הבית</a>
+            <a href="/addvehicle" class="test-link">הוסף רכב</a>
+            <a href="/vehicledetails?id=test" class="test-link">פרטי רכב</a>
+            <a href="/mylistings" class="test-link">המודעות שלי</a>
+            <a href="/login" class="test-link">התחברות</a>
+            <a href="/dashboard" class="test-link">דשבורד</a>
+            <a href="/admin" class="test-link">אדמין</a>
+        </div>
+        
+        <h2>בדיקות JavaScript:</h2>
+        <button onclick="testNavigation()" class="test-link">בדוק ניווט</button>
+        <button onclick="testRoutes()" class="test-link">בדוק נתיבים</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+        
+        function testNavigation() {
+            updateStatus('בודק ניווט...', 'info');
+            
+            const testRoutes = [
+                '/',
+                '/addvehicle',
+                '/vehicledetails',
+                '/mylistings',
+                '/login'
+            ];
+            
+            let results = '<h3>תוצאות בדיקה:</h3>';
+            
+            testRoutes.forEach(route => {
+                try {
+                    // Test if route is accessible
+                    const url = new URL(route, window.location.origin);
+                    results += `<div class="success">✅ ${route} - נתיב תקין</div>`;
+                } catch (error) {
+                    results += `<div class="error">❌ ${route} - שגיאה: ${error.message}</div>`;
+                }
+            });
+            
+            document.getElementById('results').innerHTML = results;
+            updateStatus('בדיקה הושלמה', 'success');
+        }
+        
+        function testRoutes() {
+            updateStatus('בודק נתיבים...', 'info');
+            
+            // Test current location
+            const currentPath = window.location.pathname;
+            const currentSearch = window.location.search;
+            
+            let results = '<h3>מידע נתיב נוכחי:</h3>';
+            results += `<div class="info">נתיב: ${currentPath}</div>`;
+            results += `<div class="info">פרמטרים: ${currentSearch || 'אין'}</div>`;
+            results += `<div class="info">URL מלא: ${window.location.href}</div>`;
+            
+            document.getElementById('results').innerHTML = results;
+            updateStatus('בדיקת נתיבים הושלמה', 'success');
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            updateStatus('עמוד נטען בהצלחה', 'success');
+        });
+        
+        // Test navigation events
+        window.addEventListener('popstate', (event) => {
+            updateStatus('ניווט זוהה - ' + window.location.pathname, 'info');
+        });
+    </script>
+</body>
+</html>

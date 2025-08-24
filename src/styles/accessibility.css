@@ -1,0 +1,558 @@
+/* Accessibility Styles for WCAG 2.1 AA Compliance */
+
+/* High Contrast Mode */
+.accessibility-high-contrast {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 20%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 80%;
+  --accent: 0 0% 20%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 100%;
+  --input: 0 0% 20%;
+  --ring: 0 0% 100%;
+}
+
+.accessibility-high-contrast * {
+  border-color: hsl(var(--border)) !important;
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+.accessibility-high-contrast button,
+.accessibility-high-contrast [role="button"] {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border: 2px solid hsl(var(--border)) !important;
+}
+
+.accessibility-high-contrast a {
+  color: #00BFFF !important; /* Bright blue for links */
+  text-decoration: underline !important;
+}
+
+.accessibility-high-contrast a:hover,
+.accessibility-high-contrast a:focus {
+  color: #FFD700 !important; /* Gold for hover/focus */
+  background-color: hsl(var(--accent)) !important;
+}
+
+/* Font Size Adjustments - Enhanced for proper scaling */
+html.accessibility-font-small {
+  font-size: 14px !important; /* Base font size for small */
+}
+
+html.accessibility-font-normal {
+  font-size: 16px !important; /* Base font size for normal */
+}
+
+html.accessibility-font-large {
+  font-size: 18px !important; /* Base font size for large */
+}
+
+html.accessibility-font-extra-large {
+  font-size: 20px !important; /* Base font size for extra large */
+}
+
+/* Apply to all elements with higher specificity */
+.accessibility-font-small,
+.accessibility-font-small * {
+  font-size: 0.875rem !important; /* 14px relative */
+}
+
+.accessibility-font-normal,
+.accessibility-font-normal * {
+  font-size: 1rem !important; /* 16px relative */
+}
+
+.accessibility-font-large,
+.accessibility-font-large * {
+  font-size: 1.125rem !important; /* 18px relative */
+}
+
+.accessibility-font-extra-large,
+.accessibility-font-extra-large * {
+  font-size: 1.25rem !important; /* 20px relative */
+}
+
+/* Override common elements that might have specific font sizes */
+.accessibility-font-large h1,
+.accessibility-font-large h2,
+.accessibility-font-large h3,
+.accessibility-font-large h4,
+.accessibility-font-large h5,
+.accessibility-font-large h6,
+.accessibility-font-large p,
+.accessibility-font-large span,
+.accessibility-font-large div,
+.accessibility-font-large button,
+.accessibility-font-large a,
+.accessibility-font-large input,
+.accessibility-font-large label {
+  font-size: 1.125rem !important;
+  line-height: 1.6 !important;
+}
+
+.accessibility-font-extra-large h1,
+.accessibility-font-extra-large h2,
+.accessibility-font-extra-large h3,
+.accessibility-font-extra-large h4,
+.accessibility-font-extra-large h5,
+.accessibility-font-extra-large h6,
+.accessibility-font-extra-large p,
+.accessibility-font-extra-large span,
+.accessibility-font-extra-large div,
+.accessibility-font-extra-large button,
+.accessibility-font-extra-large a,
+.accessibility-font-extra-large input,
+.accessibility-font-extra-large label {
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+}
+
+.accessibility-font-large *,
+.accessibility-font-extra-large * {
+  line-height: 1.6 !important;
+}
+
+/* Reduced Motion */
+.accessibility-reduced-motion *,
+.accessibility-reduced-motion *::before,
+.accessibility-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+.accessibility-reduced-motion .hover-lift:hover {
+  transform: none !important;
+}
+
+.accessibility-reduced-motion .fade-in {
+  animation: none !important;
+}
+
+/* Screen Reader Mode Enhancements */
+.accessibility-screen-reader .sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.25rem !important;
+  margin: 0.25rem !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+}
+
+.accessibility-screen-reader img:not([alt]) {
+  outline: 2px solid red !important;
+}
+
+.accessibility-screen-reader img:not([alt])::after {
+  content: "תמונה ללא תיאור חלופי" !important;
+  display: block !important;
+  color: red !important;
+  font-weight: bold !important;
+}
+
+/* Keyboard Navigation Enhancements */
+.accessibility-keyboard-nav *:focus {
+  outline: 3px solid #005FCC !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 1px #FFFFFF !important;
+}
+
+.accessibility-keyboard-nav button:focus,
+.accessibility-keyboard-nav [role="button"]:focus,
+.accessibility-keyboard-nav a:focus,
+.accessibility-keyboard-nav input:focus,
+.accessibility-keyboard-nav select:focus,
+.accessibility-keyboard-nav textarea:focus {
+  outline: 3px solid #005FCC !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 1px #FFFFFF, 0 0 0 4px #005FCC !important;
+}
+
+/* Enhanced Focus Visible */
+.accessibility-focus-visible *:focus-visible {
+  outline: 3px solid #FFD700 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 1px #000000, 0 0 0 5px #FFD700 !important;
+  background-color: rgba(255, 215, 0, 0.1) !important;
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Auto-play Control */
+.accessibility-no-autoplay video,
+.accessibility-no-autoplay audio {
+  autoplay: false !important;
+}
+
+.accessibility-no-autoplay [autoplay] {
+  animation-play-state: paused !important;
+}
+
+/* RTL Support Enhancements */
+[dir="rtl"] .accessibility-enabled {
+  text-align: right;
+}
+
+[dir="rtl"] .accessibility-enabled .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .accessibility-enabled .grid {
+  direction: rtl;
+}
+
+/* Color Contrast Improvements */
+.accessibility-enabled {
+  --text-contrast-ratio: 4.5; /* WCAG AA standard */
+}
+
+.accessibility-high-contrast {
+  --text-contrast-ratio: 7; /* WCAG AAA standard */
+}
+
+/* Interactive Element Sizing (Touch Target Size) */
+.accessibility-enabled button,
+.accessibility-enabled [role="button"],
+.accessibility-enabled a,
+.accessibility-enabled input,
+.accessibility-enabled select {
+  min-height: 44px !important;
+  min-width: 44px !important;
+  padding: 0.5rem !important;
+}
+
+/* Error and Status Announcements */
+.accessibility-announcement {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.accessibility-announcement.announce {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+/* Form Enhancements */
+.accessibility-enabled label {
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+.accessibility-enabled input:invalid,
+.accessibility-enabled select:invalid,
+.accessibility-enabled textarea:invalid {
+  border: 2px solid hsl(var(--destructive)) !important;
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.accessibility-enabled .error-message {
+  color: hsl(var(--destructive)) !important;
+  font-weight: bold !important;
+  margin-top: 0.25rem !important;
+  display: block !important;
+}
+
+/* Table Enhancements */
+.accessibility-enabled table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+.accessibility-enabled th,
+.accessibility-enabled td {
+  border: 1px solid hsl(var(--border)) !important;
+  padding: 0.75rem !important;
+  text-align: right !important;
+}
+
+.accessibility-enabled th {
+  background-color: hsl(var(--muted)) !important;
+  font-weight: bold !important;
+}
+
+/* Loading States */
+.accessibility-enabled .loading {
+  position: relative;
+}
+
+.accessibility-enabled .loading::after {
+  content: "טוען...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+/* Print Styles */
+@media print {
+  .accessibility-enabled {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .accessibility-enabled * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .accessibility-enabled a {
+    text-decoration: underline !important;
+  }
+  
+  .accessibility-enabled a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* Mobile Accessibility Enhancements */
+@media (max-width: 768px) {
+  .accessibility-enabled {
+    font-size: 1.1rem !important;
+  }
+  
+  .accessibility-enabled button,
+  .accessibility-enabled [role="button"],
+  .accessibility-enabled a {
+    min-height: 48px !important;
+    min-width: 48px !important;
+    padding: 0.75rem !important;
+  }
+  
+  .accessibility-enabled input,
+  .accessibility-enabled select,
+  .accessibility-enabled textarea {
+    min-height: 48px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Dark Mode Accessibility */
+@media (prefers-color-scheme: dark) {
+  .accessibility-enabled:not(.accessibility-high-contrast) {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+/* Animation Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .accessibility-enabled *,
+  .accessibility-enabled *::before,
+  .accessibility-enabled *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Contrast Preferences */
+@media (prefers-contrast: high) {
+  .accessibility-enabled {
+    --border: 0 0% 100%;
+    --input: 0 0% 20%;
+  }
+  
+  .accessibility-enabled * {
+    border-width: 2px !important;
+  }
+}
+
+/* Focus Management */
+.accessibility-enabled [tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+.accessibility-enabled .focus-trap {
+  position: relative;
+}
+
+.accessibility-enabled .focus-trap::before,
+.accessibility-enabled .focus-trap::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Landmark Regions */
+.accessibility-enabled main,
+.accessibility-enabled nav,
+.accessibility-enabled aside,
+.accessibility-enabled header,
+.accessibility-enabled footer {
+  position: relative;
+}
+
+.accessibility-enabled main::before {
+  content: "תוכן ראשי";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.accessibility-enabled nav::before {
+  content: "ניווט";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Status Messages */
+.accessibility-status {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.accessibility-status[aria-live="polite"],
+.accessibility-status[aria-live="assertive"] {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+  border: 1px solid hsl(var(--border));
+}
+
+/* Utility Classes */
+.accessibility-enabled .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.accessibility-enabled .visually-hidden.focusable:active,
+.accessibility-enabled .visually-hidden.focusable:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* Additional font size overrides for stubborn elements */
+.accessibility-font-large .text-xs { font-size: 1rem !important; }
+.accessibility-font-large .text-sm { font-size: 1.125rem !important; }
+.accessibility-font-large .text-base { font-size: 1.25rem !important; }
+.accessibility-font-large .text-lg { font-size: 1.375rem !important; }
+.accessibility-font-large .text-xl { font-size: 1.5rem !important; }
+.accessibility-font-large .text-2xl { font-size: 1.75rem !important; }
+.accessibility-font-large .text-3xl { font-size: 2rem !important; }
+.accessibility-font-large .text-4xl { font-size: 2.5rem !important; }
+.accessibility-font-large .text-5xl { font-size: 3rem !important; }
+
+.accessibility-font-extra-large .text-xs { font-size: 1.125rem !important; }
+.accessibility-font-extra-large .text-sm { font-size: 1.25rem !important; }
+.accessibility-font-extra-large .text-base { font-size: 1.375rem !important; }
+.accessibility-font-extra-large .text-lg { font-size: 1.5rem !important; }
+.accessibility-font-extra-large .text-xl { font-size: 1.75rem !important; }
+.accessibility-font-extra-large .text-2xl { font-size: 2rem !important; }
+.accessibility-font-extra-large .text-3xl { font-size: 2.5rem !important; }
+.accessibility-font-extra-large .text-4xl { font-size: 3rem !important; }
+.accessibility-font-extra-large .text-5xl { font-size: 3.5rem !important; }
+
+/* Force font size on common Tailwind classes */
+.accessibility-font-large [class*="text-"],
+.accessibility-font-extra-large [class*="text-"] {
+  font-size: inherit !important;
+}
+
+/* Ensure proper scaling for Hebrew text */
+.accessibility-font-large[dir="rtl"],
+.accessibility-font-extra-large[dir="rtl"] {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
